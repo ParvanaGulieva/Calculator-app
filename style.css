@@ -1,0 +1,370 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+}
+
+:root {
+  --color-bg: #3a4663;
+  --color-screen: #181f33;
+  --color-calc: #242d44;
+  --color-red: #d03f2f;
+  --color-main-button: #eae3dc;
+  --color-blue-button: #647198;
+  --color-text: #434a59;
+  --color-white: #ffffff;
+  --blue-button-hover: #a2b2e1;
+  --white-button-hover: #fffffe;
+  --red-button-hover: #f96b5b;
+
+  --white-shadow: inset 0px -4px 0px #b3a497;
+  --blue-shadow: inset 0px -4px 0px #414e73;
+  --red-shadow: inset 0px -4px 0px #93261a;
+}
+
+.theme-2 {
+  --color-bg: #e6e6e6;
+  --color-screen: #eeeeee;
+  --color-calc: #d2cdcd;
+  --color-red: #c85402;
+  --color-main-button: #e5e4e1;
+  --color-blue-button: #378187;
+  --color-text: #36362c;
+  --color-white: #36362c;
+  --blue-button-hover: #62b5bc;
+  --white-button-hover: #ffffff;
+  --red-button-hover: #ff8a38;
+
+  --white-shadow: inset 0px -4px 0px #a79e91;
+  --blue-shadow: inset 0px -4px 0px #1b6066;
+  --red-shadow: inset 0px -4px 0px #873901;
+}
+
+.theme-3 {
+  --color-bg: #17062a;
+  --color-screen: #1e0936;
+  --color-calc: #1e0936;
+  --color-red: #00ded0;
+  --color-main-button: #331c4d;
+  --color-blue-button: #56077c;
+  --color-text: #ffe53d;
+  --color-white: #ffe53d;
+  --blue-button-hover: #8631af;
+  --white-button-hover: #6c34ac;
+  --red-button-hover: #93fff8;
+
+  --white-shadow: inset 0px -4px 0px #881c9e;
+  --blue-shadow: inset 0px -4px 0px #be15f4;
+  --red-shadow: inset 0px -4px 0px #6cf9f1;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.calculator {
+  display: grid;
+  grid-template-columns: 54rem;
+  grid-template-rows: repeat(3, min-content);
+  row-gap: 2.4rem;
+
+  align-self: center;
+}
+
+.heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  grid-column: 1/-1;
+
+  margin-bottom: 0.8rem;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 3.2rem;
+  line-height: 2.9rem;
+  text-align: left;
+  letter-spacing: -0.533333px;
+  color: var(--color-white);
+}
+
+.theme {
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.1rem;
+  text-align: right;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-white);
+
+  margin-bottom: 0.5rem;
+}
+
+.buttons {
+  background-color: var(--color-calc);
+  border-radius: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(5, 6.4rem);
+  row-gap: 2.4rem;
+  grid-column: 1/-1;
+  grid-row: 3/-1;
+  padding: 3.2rem;
+}
+
+.btn-clear,
+.btn-del {
+  font-weight: 700;
+  font-size: 2.8rem;
+  line-height: 2.6rem;
+  letter-spacing: -0.466667px;
+  color: var(--color-white);
+  border: none;
+
+  background-color: var(--color-blue-button);
+  box-shadow: var(--blue-shadow);
+  border-radius: 1rem;
+
+  text-transform: uppercase;
+
+  transition: all 0.3s;
+}
+
+.btn-clear:hover,
+.btn-del:hover {
+  background-color: var(--blue-button-hover);
+}
+
+.btn-white {
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 3.7rem;
+  letter-spacing: -0.666667px;
+  color: var(--color-text);
+  border: none;
+
+  background-color: var(--color-main-button);
+  box-shadow: var(--white-shadow);
+  border-radius: 1rem;
+
+  transition: all 0.3s;
+}
+
+.btn-white:hover {
+  background-color: var(--white-button-hover);
+}
+
+.btn-equal {
+  font-weight: 700;
+  font-size: 2.8rem;
+  line-height: 2.6rem;
+  letter-spacing: -0.466667px;
+  border: none;
+
+  color: var(--color-white);
+  background-color: var(--color-red);
+  box-shadow: var(--red-shadow);
+  border-radius: 1rem;
+
+  transition: all 0.3s;
+}
+
+.btn-equal:hover {
+  background-color: var(--red-button-hover);
+}
+
+.btn {
+  height: 6.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  transition: all 2ms;
+}
+
+.btn:active {
+  transform: translateY(0.15rem);
+}
+
+form input {
+  grid-column: 1/-1;
+  grid-area: 2 / span 1;
+  width: 100%;
+  border: none;
+  border-radius: 1rem;
+  background-color: var(--color-screen);
+
+  font-weight: 700;
+  font-size: 5.6rem;
+  line-height: 5.2rem;
+  text-align: right;
+  letter-spacing: -0.933333px;
+  color: var(--color-white);
+  padding: 3.1rem 3.2rem;
+
+  pointer-events: none;
+}
+
+.row-1 {
+  grid-column: 1/-1;
+  grid-row: 1 / span 1;
+}
+
+.row-2 {
+  grid-column: 1/-1;
+  grid-row: 2 / span 1;
+}
+
+.row-3 {
+  grid-column: 1/-1;
+  grid-row: 3 / span 1;
+}
+
+.row-4 {
+  grid-column: 1/-1;
+  grid-row: 4 / span 1;
+}
+
+.row-5 {
+  grid-column: 1/-1;
+  grid-row: 5 / span 1;
+}
+
+.row-1,
+.row-2,
+.row-3,
+.row-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 2.4rem;
+}
+
+.row-5 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2.4rem;
+}
+
+.switch {
+  display: flex;
+  flex-direction: row;
+  gap: 2.6rem;
+  align-items: flex-end;
+}
+
+.theme-switch {
+  width: 7.1rem;
+  height: 2.6rem;
+  border-radius: 1.3rem;
+  background-color: var(--color-calc);
+  position: relative;
+}
+
+[id="theme-1"],
+[id="theme-2"],
+[id="theme-3"] {
+  appearance: none;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 0.55rem;
+}
+
+[id="theme-1"] {
+  left: 0.7rem;
+}
+
+[id="theme-2"] {
+  left: 2.8rem;
+}
+
+[id="theme-3"] {
+  left: 4.8rem;
+}
+
+label {
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.1rem;
+  text-align: center;
+  color: var(--color-white);
+  top: -1.6rem;
+
+  position: absolute;
+}
+
+label[for="theme-1"] {
+  left: 1.2rem;
+}
+
+label[for="theme-2"] {
+  left: 3.2rem;
+}
+
+label[for="theme-3"] {
+  left: 5.3rem;
+}
+
+.theme-input:checked {
+  background-color: var(--color-red);
+}
+
+@media screen and (max-width: 580px) {
+  .calculator {
+    grid-template-columns: 32.8rem;
+  }
+  .buttons {
+    row-gap: 1.3rem;
+    padding: 2.4rem;
+  }
+
+  .row-1,
+  .row-2,
+  .row-3,
+  .row-4,
+  .row-5 {
+    column-gap: 1.3rem;
+  }
+
+  form input {
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: 3.7rem;
+    text-align: right;
+    letter-spacing: -0.666667px;
+    padding: 2.5rem 2.4rem;
+  }
+
+  .btn-white {
+    font-size: 3.2rem;
+    line-height: 2.9rem;
+    letter-spacing: -0.533333px;
+  }
+
+  .btn-clear,
+  .btn-del {
+    font-size: 2rem;
+    line-height: 1.8rem;
+    letter-spacing: -0.333333px;
+  }
+
+  .btn {
+    border-radius: 0.5rem;
+  }
+}
