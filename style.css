@@ -80,7 +80,7 @@ html {
   row-gap: 2.4rem;
 
   align-self: center;
-  margin-top: 4rem;
+  
 
 }
 
@@ -330,6 +330,7 @@ label[for="theme-3"] {
 @media screen and (max-width: 580px) {
   .calculator {
     grid-template-columns: 32.8rem;
+    margin-top: 4rem;
   }
   .buttons {
     row-gap: 1.3rem;
